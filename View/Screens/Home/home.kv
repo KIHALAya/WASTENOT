@@ -1,0 +1,50 @@
+MDScreen:
+    name: "main"
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+        Image:
+            source: "assets/images/logo.png"
+            pos_hint: {"center_x": .5, "center_y": .65}
+            size_hint: 1, 1 
+    
+        MDLabel:
+            text: "save time ... and money !"
+            font_name: "Roboto"
+            font_size: "23sp"
+            pos_hint: {"center_y": .58}
+            halign: "center"
+            theme_text_color: "Custom"
+            text_color: 0.564, 0.584, 0.631, 1
+
+        Button:
+            text: "LOGIN"
+            size_hint: .66, .065
+            pos_hint: {"center_x": .5, "center_y": .30}
+            background_color: 0, 0, 0, 0
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "login"
+            canvas.before:
+                Color:
+                    rgb: rgba(75, 183, 196)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [5]
+
+        Button:
+            text: "SIGNUP"
+            size_hint: .66, .065
+            pos_hint: {"center_x": .5, "center_y": .20}
+            background_color: 0, 0, 0, 0
+            color: rgba(75, 183, 196)
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "signup"
+            canvas.before:
+                Color:
+                    rgb: rgba(75, 183, 196)
+                Line:
+                    width: 1.2
+                    rounded_rectangle: self.x, self.y, self.width, self.height, 5, 5, 5, 5, 100
+
